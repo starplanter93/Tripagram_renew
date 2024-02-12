@@ -1,7 +1,7 @@
 interface Ownprops {
   text: string;
   onClick: () => void;
-  size: 'small' | 'big';
+  size?: 'small' | 'big';
 }
 
 export default function ColorButton({
