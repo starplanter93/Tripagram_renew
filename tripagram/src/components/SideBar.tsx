@@ -8,16 +8,20 @@ interface Ownprops {
 export default function SideBar({ user: { name, username, image } }: Ownprops) {
   return (
     <>
-      <div>
+      <div className='flex items-center'>
         {image && <Avatar image={image} />}
-        <p>{username}</p>
-        <p>{name}</p>
+        <div>
+          <p className='font-bold'>{username}</p>
+          <p className='text-lg text-neutral-500 leading-4'>{name}</p>
+        </div>
       </div>
-      <p>
+      <p className='text-sm text-neutral-500 mt-8'>
         About · Help · Press · API · Jobs · Privacy · Terms · Location ·
         Language
       </p>
-      <p>Copyright Tripagram</p>
+      <p className='font-bold text-sm mt-8 text-neutral-500'>
+        Copyright Tripagram
+      </p>
     </>
   );
 }
