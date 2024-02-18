@@ -1,6 +1,7 @@
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
+import { getUserByUsername } from '../../../../service/user';
 
 export async function GET(request: Request) {
   const session = await getServerSession(authOptions);
@@ -8,5 +9,7 @@ export async function GET(request: Request) {
   if (!user) {
     return new Response('Authentication Error', { status: 401 });
   }
-  return NextResponse.json('Hello');
+  return getUserByUsername(user.username).then((data) =>
+    NextResponse.json(data)
+  );
 }
