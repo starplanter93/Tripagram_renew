@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@sanity/client": "^6.12.4",
+    "@sanity/image-url": "^1.0.2",
     "cross-env": "^7.0.3",
     "next": "14.1.0",
     "next-auth": "^4.24.5",
