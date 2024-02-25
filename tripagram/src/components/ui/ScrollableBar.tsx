@@ -13,7 +13,7 @@ export default function ScrollableBar({
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 5,
+      items: 3,
     },
   };
   return (
