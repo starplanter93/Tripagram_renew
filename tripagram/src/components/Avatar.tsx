@@ -26,16 +26,26 @@ export default function Avatar({
   );
 }
 
-function getContainerStyle(size: string, highlight: boolean): string {
+function getContainerStyle(size: AvatarSize, highlight: boolean): string {
   const baseStyle = 'rounded-full flex justify-center items-center';
   const highlightStyle = highlight
     ? 'bg-gradient-to-bl from-fuchsia-600 via-rose-500 to-amber-300'
     : '';
-  const sizeStyle = size === 'small' ? 'w-9 h-9' : 'w-[68px] h-[68px]';
+  const sizeStyle = getContainerSize(size);
 
   return `${baseStyle} ${highlightStyle} ${sizeStyle}`;
 }
 
+function getContainerSize(size: AvatarSize): string {
+  switch (size) {
+    case 'small':
+      return 'w-9 h-9';
+    case 'medium':
+      return 'w-11 h-11';
+    case 'large':
+      return 'w-[68px] h-[68px]';
+  }
+}
 function getImageSizeStyle(size: AvatarSize): string {
   switch (size) {
     case 'small':
